@@ -1,6 +1,7 @@
 package org.ufabc.instrumento.corda;
 
 import org.ufabc.instrumento.Instrumento;
+import org.ufabc.instrumento.interfaces.Distorcao;
 
 public class Violao extends Instrumento implements Distorcao {
     private Long cordas;
@@ -10,15 +11,13 @@ public class Violao extends Instrumento implements Distorcao {
         return emitirSomDistorcido();
     }
 
-    @Override
-    public String toString() {
-        return "Violao{" +
-                "cordas=" + cordas +
-                '}';
-    }
-
     public Long getCordas() {
         return cordas;
+    }
+
+    @Override
+    public String toString() {
+        return "Violao{" + "cordas=" + cordas + '}';
     }
 
     public String emitirSomDistorcido() {

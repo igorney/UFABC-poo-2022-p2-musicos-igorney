@@ -1,9 +1,9 @@
 package org.ufabc.musico;
 
 import org.ufabc.instrumento.Instrumento;
-import org.ufabc.instrumento.corda.Distorcao;
 import org.ufabc.instrumento.corda.Guitarra;
 import org.ufabc.instrumento.corda.Violao;
+import org.ufabc.instrumento.interfaces.Distorcao;
 
 import java.util.ArrayList;
 
@@ -14,6 +14,14 @@ public class Musico {
     public Musico(String nome) {
         this.nome = nome;
         this.instrumentos = new ArrayList<Instrumento>();
+    }
+
+    @Override
+    public String toString() {
+        return "Musico{" +
+                "instrumentos=" + instrumentos +
+                ", nome='" + nome + '\'' +
+                '}';
     }
 
     public void tocarInstrumento() {
@@ -27,11 +35,6 @@ public class Musico {
 
     public void adicionarInstrumento(Instrumento instrumento) {
         instrumentos.add(instrumento);
-    }
-
-    @Override
-    public String toString() {
-        return "Musico{" + "nome='" + nome + '\'' + ", instrumentos=" + instrumentos + '}';
     }
 
     public String getNome() {

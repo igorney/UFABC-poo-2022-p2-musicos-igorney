@@ -1,6 +1,7 @@
 package org.ufabc.instrumento.piano;
 
 import org.ufabc.instrumento.Instrumento;
+import org.ufabc.instrumento.interfaces.Normal;
 
 import java.util.ArrayList;
 

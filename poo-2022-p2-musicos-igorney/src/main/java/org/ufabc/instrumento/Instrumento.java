@@ -18,15 +18,12 @@ public abstract class Instrumento {
         return loteFabricacao;
     }
 
-    @Override
-    public String toString() {
-        return "Instrumento{" +
-                "marca='" + marca + '\'' +
-                ", loteFabricacao=" + loteFabricacao +
-                '}';
-    }
-
     public void setLoteFabricacao(Long loteFabricacao) {
         this.loteFabricacao = loteFabricacao;
+    }
+
+    @Override
+    public String toString() {
+        return "Instrumento{" + "marca='" + marca + '\'' + ", loteFabricacao=" + loteFabricacao + '}';
     }
 }

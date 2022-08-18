@@ -1,4 +1,4 @@
-package org.ufabc.instrumento.corda;
+package org.ufabc.instrumento.interfaces;
 
 public interface Distorcao {
     String emitirSomDistorcido();
