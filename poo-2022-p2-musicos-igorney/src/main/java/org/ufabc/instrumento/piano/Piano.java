@@ -9,11 +9,10 @@ public class Piano extends Instrumento {
     private Long pedais;
     private Long teclas;
     private Armario armario;
-    private ArrayList<EfeitoSonoro> efeitosSonoros;
+    private final ArrayList<EfeitoSonoro> efeitosSonoros = new ArrayList<EfeitoSonoro>();
 
     public void adicionarEfeitoSonoro(EfeitoSonoro efeitoSonoro) {
-
-
+        efeitosSonoros.add(efeitoSonoro);
     }
 
     @Override
@@ -57,7 +56,4 @@ public class Piano extends Instrumento {
         return efeitosSonoros;
     }
 
-    public void setEfeitosSonoros(ArrayList<EfeitoSonoro> efeitosSonoros) {
-        this.efeitosSonoros = efeitosSonoros;
-    }
 }

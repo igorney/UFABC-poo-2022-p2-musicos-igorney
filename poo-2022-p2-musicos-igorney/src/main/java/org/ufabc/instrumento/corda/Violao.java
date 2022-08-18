@@ -1,11 +1,9 @@
 package org.ufabc.instrumento.corda;
 
-import org.ufabc.instrumento.piano.Piano;
-import org.ufabc.musico.Musico;
+import org.ufabc.instrumento.Instrumento;
 
-public class Violao extends Musico implements Distorcao{
+public class Violao extends Instrumento implements Distorcao {
     private Long cordas;
-    Piano piano;
 
     @Override
     public String toString() {
@@ -18,7 +16,7 @@ public class Violao extends Musico implements Distorcao{
         return cordas;
     }
 
-    public void emitirSomDistorcido() {
-
+    public String emitirSomDistorcido() {
+        return "distorcido";
     }
 }
