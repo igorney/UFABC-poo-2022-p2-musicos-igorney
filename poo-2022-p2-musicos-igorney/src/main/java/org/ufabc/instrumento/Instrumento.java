@@ -1,11 +1,10 @@
 package org.ufabc.instrumento;
 
-public class Instrumento {
+public abstract class Instrumento {
     private String marca;
     private Long loteFabricacao;
 
-    public void emitirSom() {
-    }
+    public abstract String emitirSom();
 
     public String getMarca() {
         return marca;

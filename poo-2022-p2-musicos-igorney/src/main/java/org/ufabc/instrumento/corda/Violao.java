@@ -6,6 +6,11 @@ public class Violao extends Instrumento implements Distorcao {
     private Long cordas;
 
     @Override
+    public String emitirSom() {
+        return emitirSomDistorcido();
+    }
+
+    @Override
     public String toString() {
         return "Violao{" +
                 "cordas=" + cordas +
@@ -17,6 +22,6 @@ public class Violao extends Instrumento implements Distorcao {
     }
 
     public String emitirSomDistorcido() {
-        return "distorcido";
+        return "Som distorcido";
     }
 }

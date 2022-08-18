@@ -9,6 +9,10 @@ public class Guitarra extends Instrumento implements Distorcao {
         return "distorcido";
     }
 
+    public String emitirSom() {
+        return emitirSomDistorcido();
+    }
+
     @Override
     public String toString() {
         return "Guitarra{" +

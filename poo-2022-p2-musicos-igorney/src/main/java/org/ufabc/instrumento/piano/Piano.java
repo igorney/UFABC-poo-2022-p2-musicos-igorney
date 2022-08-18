@@ -4,15 +4,28 @@ import org.ufabc.instrumento.Instrumento;
 
 import java.util.ArrayList;
 
-public class Piano extends Instrumento {
+public class Piano extends Instrumento implements Normal {
+    private final ArrayList<EfeitoSonoro> efeitosSonoros;
     private Boolean digital;
     private Long pedais;
     private Long teclas;
     private Armario armario;
-    private final ArrayList<EfeitoSonoro> efeitosSonoros = new ArrayList<EfeitoSonoro>();
+
+    public Piano(Boolean digital, Long pedais, Long teclas, Armario armario) {
+        this.digital = digital;
+        this.pedais = pedais;
+        this.teclas = teclas;
+        this.armario = armario;
+        this.efeitosSonoros = new ArrayList<EfeitoSonoro>();
+    }
 
     public void adicionarEfeitoSonoro(EfeitoSonoro efeitoSonoro) {
         efeitosSonoros.add(efeitoSonoro);
+    }
+
+    @Override
+    public String emitirSom() {
+        return emitirSomNormal();
     }
 
     @Override
@@ -56,4 +69,7 @@ public class Piano extends Instrumento {
         return efeitosSonoros;
     }
 
+    public String emitirSomNormal() {
+        return "Som normal!";
+    }
 }
