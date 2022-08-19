@@ -171,8 +171,8 @@ public class Principal {
             System.out.println("\n");
             System.out.println("Digite uma opção:");
             System.out.println("1- Adicionar Violao");
-            System.out.println("2- Adicionar Piano");
-            System.out.println("3- Adicionar Guitarra");
+            System.out.println("2- Adicionar Guitarra");
+            System.out.println("3- Adicionar Piano");
             System.out.println("0- Sair");
             System.out.println("----------------");
             return Integer.parseInt(scan.nextLine());
