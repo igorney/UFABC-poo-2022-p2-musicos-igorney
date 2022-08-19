@@ -1,10 +1,10 @@
-package org.ufabc.instrumento.corda;
+package org.ufabc.musico.instrumento.corda;
 
-import org.ufabc.instrumento.Instrumento;
-import org.ufabc.instrumento.interfaces.Distorcao;
+import org.ufabc.musico.instrumento.Instrumento;
+import org.ufabc.musico.instrumento.interfaces.Distorcao;
 
 public class Guitarra extends Instrumento implements Distorcao {
-    private Long cordas;
+    private final Long cordas;
 
     public Guitarra(Long cordas) {
         this.cordas = cordas;

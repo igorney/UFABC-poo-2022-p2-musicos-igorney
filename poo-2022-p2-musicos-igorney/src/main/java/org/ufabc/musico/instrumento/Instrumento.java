@@ -1,4 +1,4 @@
-package org.ufabc.instrumento;
+package org.ufabc.musico.instrumento;
 
 public abstract class Instrumento {
     private String marca;

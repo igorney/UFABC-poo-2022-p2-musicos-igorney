@@ -1,14 +1,14 @@
-package org.ufabc;
+package org.ufabc.musico;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.ufabc.instrumento.corda.Guitarra;
-import org.ufabc.instrumento.corda.Violao;
-import org.ufabc.instrumento.piano.Armario;
-import org.ufabc.instrumento.piano.EfeitoSonoro;
-import org.ufabc.instrumento.piano.Piano;
+import org.ufabc.musico.instrumento.corda.Guitarra;
+import org.ufabc.musico.instrumento.corda.Violao;
+import org.ufabc.musico.instrumento.piano.Armario;
+import org.ufabc.musico.instrumento.piano.EfeitoSonoro;
+import org.ufabc.musico.instrumento.piano.Piano;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class MusicoTest {
     private Musico musico;
@@ -20,7 +20,7 @@ public class MusicoTest {
 
     @Test
     public void testMusicoGuitarrista() {
-        Guitarra guitarra = new Guitarra(12l);
+        Guitarra guitarra = new Guitarra(12L);
         musico.adicionarInstrumento(guitarra);
         assertEquals("Som distorcido", musico.tocarInstrumento());
         assertEquals("Musico{instrumentos=[Guitarra{cordas=12}], nome='Igor'}", musico.toString());
@@ -29,7 +29,7 @@ public class MusicoTest {
     @Test
     public void testMusicoPianista() {
         Armario armario = new Armario("Reflorestada");
-        Piano piano = new Piano(true, 13l, 14l, armario);
+        Piano piano = new Piano(true, 13L, 14L, armario);
         EfeitoSonoro efeitoSonoro = new EfeitoSonoro("Susten");
         piano.adicionarEfeitoSonoro(efeitoSonoro);
         musico.adicionarInstrumento(piano);
@@ -39,7 +39,7 @@ public class MusicoTest {
 
     @Test
     public void testMusicoViolonista() {
-        Violao violao = new Violao(16l);
+        Violao violao = new Violao(16L);
         musico.adicionarInstrumento(violao);
         assertEquals("Som distorcido", musico.tocarInstrumento());
         assertEquals("Musico{instrumentos=[Violao{cordas=16}], nome='Igor'}", musico.toString());

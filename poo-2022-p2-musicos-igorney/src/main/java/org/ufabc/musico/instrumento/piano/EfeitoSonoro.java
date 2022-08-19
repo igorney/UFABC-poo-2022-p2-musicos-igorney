@@ -1,4 +1,4 @@
-package org.ufabc.instrumento.piano;
+package org.ufabc.musico.instrumento.piano;
 
 public class EfeitoSonoro {
     private final String efeitoSonoro;

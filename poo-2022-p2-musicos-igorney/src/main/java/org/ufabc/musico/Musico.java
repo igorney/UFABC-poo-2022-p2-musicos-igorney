@@ -1,9 +1,9 @@
-package org.ufabc;
+package org.ufabc.musico;
 
-import org.ufabc.instrumento.Instrumento;
-import org.ufabc.instrumento.corda.Guitarra;
-import org.ufabc.instrumento.corda.Violao;
-import org.ufabc.instrumento.interfaces.Distorcao;
+import org.ufabc.musico.instrumento.Instrumento;
+import org.ufabc.musico.instrumento.corda.Guitarra;
+import org.ufabc.musico.instrumento.corda.Violao;
+import org.ufabc.musico.instrumento.interfaces.Distorcao;
 
 import java.util.ArrayList;
 

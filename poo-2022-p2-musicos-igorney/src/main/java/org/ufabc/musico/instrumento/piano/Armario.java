@@ -1,4 +1,4 @@
-package org.ufabc.instrumento.piano;
+package org.ufabc.musico.instrumento.piano;
 
 public class Armario {
     private String madeira;
