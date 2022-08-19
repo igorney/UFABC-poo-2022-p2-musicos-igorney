@@ -4,6 +4,7 @@ import org.ufabc.instrumento.Instrumento;
 import org.ufabc.instrumento.interfaces.Normal;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class Piano extends Instrumento implements Normal {
     private final ArrayList<EfeitoSonoro> efeitosSonoros;
@@ -31,7 +32,7 @@ public class Piano extends Instrumento implements Normal {
 
     @Override
     public String toString() {
-        return "Piano{" + "digital=" + digital + ", pedais=" + pedais + ", teclas=" + teclas + ", armario=" + armario + ", efeitosSonoros=" + efeitosSonoros + '}';
+        return "Piano{" + "digital=" + digital + ", pedais=" + pedais + ", teclas=" + teclas + ", armario=" + getArmario().getMadeira() + ", efeitosSonoros=" + getEfeitosSonoros().stream().map(EfeitoSonoro::getEfeitoSonoro).collect(Collectors.joining(",")) + '}';
     }
 
     public Boolean getDigital() {
@@ -67,7 +68,7 @@ public class Piano extends Instrumento implements Normal {
     }
 
     public ArrayList<EfeitoSonoro> getEfeitosSonoros() {
-        return efeitosSonoros;
+        return this.efeitosSonoros;
     }
 
     public String emitirSomNormal() {

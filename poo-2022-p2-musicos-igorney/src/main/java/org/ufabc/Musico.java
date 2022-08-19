@@ -1,4 +1,4 @@
-package org.ufabc.musico;
+package org.ufabc;
 
 import org.ufabc.instrumento.Instrumento;
 import org.ufabc.instrumento.corda.Guitarra;
@@ -24,13 +24,14 @@ public class Musico {
                 '}';
     }
 
-    public void tocarInstrumento() {
+    public String tocarInstrumento() {
         for (Instrumento instrumento : instrumentos) {
             if (instrumento instanceof Violao || instrumento instanceof Guitarra) {
-                ((Distorcao) instrumento).emitirSomDistorcido();
+                return ((Distorcao) instrumento).emitirSomDistorcido();
             }
-            instrumento.emitirSom();
+            return instrumento.emitirSom();
         }
+        return "Nenhum instrumento encontrado!";
     }
 
     public void adicionarInstrumento(Instrumento instrumento) {

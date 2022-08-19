@@ -1,10 +1,10 @@
 package org.ufabc.instrumento.piano;
 
-public class Armario extends Piano {
+public class Armario {
     private String madeira;
 
-    public Armario(Boolean digital, Long pedais, Long teclas, Armario armario) {
-        super(digital, pedais, teclas, armario);
+    public Armario(String madeira) {
+        this.madeira = madeira;
     }
 
     public String getMadeira() {

@@ -4,7 +4,11 @@ import org.ufabc.instrumento.Instrumento;
 import org.ufabc.instrumento.interfaces.Distorcao;
 
 public class Violao extends Instrumento implements Distorcao {
-    private Long cordas;
+    private final Long cordas;
+
+    public Violao(Long cordas) {
+        this.cordas = cordas;
+    }
 
     @Override
     public String emitirSom() {

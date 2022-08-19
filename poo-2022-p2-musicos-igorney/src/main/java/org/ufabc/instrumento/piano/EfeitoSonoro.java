@@ -1,5 +1,13 @@
 package org.ufabc.instrumento.piano;
 
 public class EfeitoSonoro {
-    private String efeitoSonoro;
+    private final String efeitoSonoro;
+
+    public EfeitoSonoro(String efeitoSonoro) {
+        this.efeitoSonoro = efeitoSonoro;
+    }
+
+    public String getEfeitoSonoro() {
+        return efeitoSonoro;
+    }
 }

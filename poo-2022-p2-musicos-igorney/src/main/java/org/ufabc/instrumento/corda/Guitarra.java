@@ -6,8 +6,12 @@ import org.ufabc.instrumento.interfaces.Distorcao;
 public class Guitarra extends Instrumento implements Distorcao {
     private Long cordas;
 
+    public Guitarra(Long cordas) {
+        this.cordas = cordas;
+    }
+
     public String emitirSomDistorcido() {
-        return "distorcido";
+        return "Som distorcido";
     }
 
     @Override
