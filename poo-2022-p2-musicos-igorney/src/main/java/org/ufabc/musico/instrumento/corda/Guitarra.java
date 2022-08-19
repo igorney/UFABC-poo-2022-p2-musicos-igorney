@@ -4,9 +4,9 @@ import org.ufabc.musico.instrumento.Instrumento;
 import org.ufabc.musico.instrumento.interfaces.Distorcao;
 
 public class Guitarra extends Instrumento implements Distorcao {
-    private final Long cordas;
+    private final int cordas;
 
-    public Guitarra(Long cordas) {
+    public Guitarra(int cordas) {
         this.cordas = cordas;
     }
 
@@ -23,7 +23,7 @@ public class Guitarra extends Instrumento implements Distorcao {
         return emitirSomDistorcido();
     }
 
-    public Long getCordas() {
+    public int getCordas() {
         return cordas;
     }
 }

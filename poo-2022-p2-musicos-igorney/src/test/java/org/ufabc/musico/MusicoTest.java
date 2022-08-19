@@ -20,7 +20,7 @@ public class MusicoTest {
 
     @Test
     public void testMusicoGuitarrista() {
-        Guitarra guitarra = new Guitarra(12L);
+        Guitarra guitarra = new Guitarra(12);
         musico.adicionarInstrumento(guitarra);
         assertEquals("Som distorcido", musico.tocarInstrumento());
         assertEquals("Musico{instrumentos=[Guitarra{cordas=12}], nome='Igor'}", musico.toString());
@@ -29,7 +29,7 @@ public class MusicoTest {
     @Test
     public void testMusicoPianista() {
         Armario armario = new Armario("Reflorestada");
-        Piano piano = new Piano(true, 13L, 14L, armario);
+        Piano piano = new Piano(true, 13, 14, armario);
         EfeitoSonoro efeitoSonoro = new EfeitoSonoro("Susten");
         piano.adicionarEfeitoSonoro(efeitoSonoro);
         musico.adicionarInstrumento(piano);
@@ -39,7 +39,7 @@ public class MusicoTest {
 
     @Test
     public void testMusicoViolonista() {
-        Violao violao = new Violao(16L);
+        Violao violao = new Violao(16);
         musico.adicionarInstrumento(violao);
         assertEquals("Som distorcido", musico.tocarInstrumento());
         assertEquals("Musico{instrumentos=[Violao{cordas=16}], nome='Igor'}", musico.toString());

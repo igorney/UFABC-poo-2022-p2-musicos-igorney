@@ -9,11 +9,11 @@ import java.util.stream.Collectors;
 public class Piano extends Instrumento implements Normal {
     private final ArrayList<EfeitoSonoro> efeitosSonoros;
     private Boolean digital;
-    private Long pedais;
-    private Long teclas;
+    private int pedais;
+    private int teclas;
     private Armario armario;
 
-    public Piano(Boolean digital, Long pedais, Long teclas, Armario armario) {
+    public Piano(Boolean digital, int pedais, int teclas, Armario armario) {
         this.digital = digital;
         this.pedais = pedais;
         this.teclas = teclas;
@@ -43,19 +43,19 @@ public class Piano extends Instrumento implements Normal {
         this.digital = digital;
     }
 
-    public Long getPedais() {
+    public int getPedais() {
         return pedais;
     }
 
-    public void setPedais(Long pedais) {
+    public void setPedais(int pedais) {
         this.pedais = pedais;
     }
 
-    public Long getTeclas() {
+    public int getTeclas() {
         return teclas;
     }
 
-    public void setTeclas(Long teclas) {
+    public void setTeclas(int teclas) {
         this.teclas = teclas;
     }
 

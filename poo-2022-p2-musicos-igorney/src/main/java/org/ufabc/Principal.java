@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Principal {
-    private static final ArrayList<Musico> musicos = new ArrayList<>();
+    private static final ArrayList<Musico> musicos = new ArrayList<Musico>();
 
     private static final Scanner scan = new Scanner(System.in);
 
@@ -56,12 +56,19 @@ public class Principal {
     }
 
     private static void mostrarInformacoes() {
-
+        System.out.println("Nome do musico");
+        String nome = scan.nextLine();
+        Musico musico = buscarMusico(nome);
+        try {
+            System.out.println(musico.toString());
+        } catch (NullPointerException e) {
+            System.out.println("Musico não encontrado");
+        }
     }
 
     private static void listarTodosMusicos() {
         for (Musico musico : musicos) {
-            musico.toString();
+            System.out.println(musico.toString());
         }
     }
 
@@ -77,34 +84,42 @@ public class Principal {
     }
 
     private static void adicionarInstrumento() {
+        System.out.println("Nome do musico");
         String nome = scan.nextLine();
         Musico musico = buscarMusico(nome);
         try {
             switch (menuInstrumentos()) {
                 case 1: {
                     System.out.println("Numero de cordas do Violao");
-                    Long cordas = scan.nextLong();
+                    int cordas = scan.nextInt();
                     Violao violao = new Violao(cordas);
                     musico.adicionarInstrumento(violao);
+                    break;
                 }
                 case 2: {
                     System.out.println("Numero de cordas da Guitarra");
-                    Long cordas = scan.nextLong();
+                    int cordas = scan.nextInt();
                     Guitarra guitarra = new Guitarra(cordas);
                     musico.adicionarInstrumento(guitarra);
+                    break;
                 }
                 case 3: {
                     System.out.println("Piano digital? (true/false)");
                     Boolean digital = scan.nextBoolean();
                     System.out.println("Numero de pedais do Piano");
-                    Long pedais = scan.nextLong();
+                    int pedais = scan.nextInt();
                     System.out.println("Numero de teclas do Piano");
-                    Long teclas = scan.nextLong();
+                    int teclas = scan.nextInt();
                     System.out.println("Madeira do armario do Piano");
                     String madeira = scan.nextLine();
                     Armario armario = new Armario(madeira);
                     Piano piano = new Piano(digital, pedais, teclas, armario);
                     musico.adicionarInstrumento(piano);
+                    break;
+                }
+                default: {
+                    System.out.println("Opção inválida.");
+                    break;
                 }
             }
         } catch (NullPointerException e) {
@@ -115,19 +130,22 @@ public class Principal {
 
     private static Musico buscarMusico(String nome) {
         for (Musico musico : musicos) {
-            if (musico.getNome() == nome) return musico;
+            if (nome.equals(musico.getNome())) {
+                return musico;
+            }
         }
         return null;
     }
 
     private static void adicionarMusico() {
         System.out.println("Digite o nome:");
-        Musico musico = new Musico(scan.nextLine());
-
+        String nome = scan.nextLine();
+        Musico musico = new Musico(nome);
+        musicos.add(musico);
         System.out.println("----------------");
         System.out.println("Musico Cadastrado com Sucesso");
         System.out.println(musico);
-        musicos.add(musico);
+        System.out.println(musicos);
     }
 
     private static int menu() {
@@ -136,9 +154,9 @@ public class Principal {
             System.out.println("Digite uma opção:");
             System.out.println("1- Adicionar musico");
             System.out.println("2- Adicionar Instrumento a um musico");
-            System.out.println("3- Atualizar contato");
-            System.out.println("4- Remover contato");
-            System.out.println("5- Listar todos os contatos");
+            System.out.println("3- Tocar instrumento");
+            System.out.println("4- Mostrar informacoes musico");
+            System.out.println("5- Listar todos os musicos");
             System.out.println("0- Sair");
             System.out.println("----------------");
             return Integer.parseInt(scan.nextLine());
