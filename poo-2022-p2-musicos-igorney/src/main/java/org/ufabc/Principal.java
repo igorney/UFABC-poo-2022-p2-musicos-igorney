@@ -4,6 +4,7 @@ import org.ufabc.musico.Musico;
 import org.ufabc.musico.instrumento.corda.Guitarra;
 import org.ufabc.musico.instrumento.corda.Violao;
 import org.ufabc.musico.instrumento.piano.Armario;
+import org.ufabc.musico.instrumento.piano.EfeitoSonoro;
 import org.ufabc.musico.instrumento.piano.Piano;
 
 import java.util.ArrayList;
@@ -110,10 +111,15 @@ public class Principal {
                     int pedais = scan.nextInt();
                     System.out.println("Numero de teclas do Piano");
                     int teclas = scan.nextInt();
+                    System.out.println("------ Dados registrados ------");
                     System.out.println("Madeira do armario do Piano");
                     String madeira = scan.nextLine();
+                    System.out.println("Efeito sonoro do Piano");
+                    String efeito = scan.nextLine();
                     Armario armario = new Armario(madeira);
                     Piano piano = new Piano(digital, pedais, teclas, armario);
+                    EfeitoSonoro efeitoSonoro = new EfeitoSonoro(efeito);
+                    piano.adicionarEfeitoSonoro(efeitoSonoro);
                     musico.adicionarInstrumento(piano);
                     break;
                 }
